@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CustomTodoListItem extends StatelessWidget {
   const CustomTodoListItem({
     super.key,
+    this.isDone = false,
     required this.text,
     required this.onCrossTap,
     required this.onTextTap,
   });
 
+  final bool isDone;
   final String text;
   final void Function()? onTextTap;
   final void Function()? onCrossTap;
@@ -29,7 +31,12 @@ class CustomTodoListItem extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: onTextTap,
-            child: Text(text),
+            child: Text(
+              text,
+              style: isDone
+                  ? const TextStyle(decoration: TextDecoration.lineThrough)
+                  : null,
+            ),
           ),
           GestureDetector(
             onTap: onCrossTap,

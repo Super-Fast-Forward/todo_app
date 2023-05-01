@@ -7,6 +7,9 @@ import 'package:theme/theme_mode.dart';
 
 import 'home_page.dart';
 
+// ignore: constant_identifier_names
+const COLLECTION_NAME = "Todo_App";
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

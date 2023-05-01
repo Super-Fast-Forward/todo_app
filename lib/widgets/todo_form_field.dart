@@ -1,4 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
+import '../main.dart';
+
+final TextEditingController textEditingController = TextEditingController();
 
 class TodoFromField extends StatelessWidget {
   const TodoFromField({super.key});
@@ -11,6 +16,7 @@ class TodoFromField extends StatelessWidget {
         Expanded(
           child: SizedBox(
             child: TextFormField(
+              controller: textEditingController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
@@ -26,6 +32,18 @@ class TodoFromField extends StatelessWidget {
           width: 10,
         ),
         GestureDetector(
+          onTap: () {
+            FirebaseFirestore.instance.collection(COLLECTION_NAME).add(
+              {
+                "text": "as",
+                "isDone": false,
+              },
+            );
+            kDB.collection(COLLECTION_NAME).add({
+              "text": textEditingController.text,
+              "isDone": false,
+            });
+          },
           child: Container(
             height: 49,
             width: 49,
