@@ -1,10 +1,10 @@
-import 'package:auth/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:theme/config.dart';
 import 'package:theme/theme_mode.dart';
 
+import 'firebase_options.dart';
 import 'home_page.dart';
 
 // ignore: constant_identifier_names
@@ -15,6 +15,8 @@ Future<void> main() async {
 
   ThemeModeConfig.enableSave = true;
   ThemeModeConfig.defaultToLightTheme = true;
+
+  print('${DefaultFirebaseOptions.currentPlatform}');
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
