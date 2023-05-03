@@ -18,7 +18,7 @@ class HomePageTodoList extends ConsumerWidget {
           shrinkWrap: true,
           itemCount: col.size,
           itemBuilder: (context, index) {
-            final todo = col.docs[index];
+            final todo = col.docs[index].data();
             return CustomTodoListItem(
               text: todo["text"],
               isDone: todo["isDone"],
@@ -27,9 +27,7 @@ class HomePageTodoList extends ConsumerWidget {
             );
           },
           separatorBuilder: (context, index) {
-            return const SizedBox(
-              height: 10,
-            );
+            return const SizedBox(height: 10);
           },
         );
       },

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/widgets/custom_todo_list_item.dart';
 import 'package:todo_app/widgets/home_page_todo_list.dart';
 import 'package:todo_app/widgets/todo_form_field.dart';
 

@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import '../main.dart';
@@ -33,12 +32,6 @@ class TodoFromField extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            FirebaseFirestore.instance.collection(COLLECTION_NAME).add(
-              {
-                "text": "as",
-                "isDone": false,
-              },
-            );
             kDB.collection(COLLECTION_NAME).add({
               "text": textEditingController.text,
               "isDone": false,
