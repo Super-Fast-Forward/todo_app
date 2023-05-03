@@ -18,12 +18,16 @@ class HomePageTodoList extends ConsumerWidget {
           shrinkWrap: true,
           itemCount: col.size,
           itemBuilder: (context, index) {
-            final todo = col.docs[index].data();
+            final todo = col.docs[index];
             return CustomTodoListItem(
               text: todo["text"],
               isDone: todo["isDone"],
-              onCrossTap: () {},
-              onTextTap: () {},
+              onCrossTap: () {
+                todo.reference.delete();
+              },
+              onTextTap: () {
+                todo.reference.update({"isDone": !todo["isDone"]});
+              },
             );
           },
           separatorBuilder: (context, index) {

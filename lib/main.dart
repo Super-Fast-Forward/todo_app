@@ -16,8 +16,6 @@ Future<void> main() async {
   ThemeModeConfig.enableSave = true;
   ThemeModeConfig.defaultToLightTheme = true;
 
-  print('${DefaultFirebaseOptions.currentPlatform}');
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

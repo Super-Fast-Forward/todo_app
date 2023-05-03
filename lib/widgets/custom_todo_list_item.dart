@@ -34,7 +34,10 @@ class CustomTodoListItem extends StatelessWidget {
             child: Text(
               text,
               style: isDone
-                  ? const TextStyle(decoration: TextDecoration.lineThrough)
+                  ? const TextStyle(
+                      decoration: TextDecoration.lineThrough,
+                      decorationThickness: 2.85,
+                    )
                   : null,
             ),
           ),
