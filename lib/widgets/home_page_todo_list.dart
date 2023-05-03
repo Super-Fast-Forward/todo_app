@@ -39,8 +39,9 @@ class HomePageTodoList extends ConsumerWidget {
         return const SizedBox.shrink();
       },
       loading: () {
-        return const SizedBox.shrink(
-          child: Text("Loading"),
+        return const Padding(
+          padding: EdgeInsets.only(top: 100),
+          child: CircularProgressIndicator.adaptive(),
         );
       },
     );
