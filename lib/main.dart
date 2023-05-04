@@ -1,24 +1,12 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:theme/config.dart';
-import 'package:theme/theme_mode.dart';
-
-import 'firebase_options.dart';
 import 'home_page.dart';
-
-// ignore: constant_identifier_names
-const COLLECTION_NAME = "Todo_App";
+import 'init/init.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  ThemeModeConfig.enableSave = true;
-  ThemeModeConfig.defaultToLightTheme = true;
-
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await init();
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -30,7 +18,8 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       title: 'Todo App',
-      themeMode: ref.watch(themeModeSNP) ? ThemeMode.dark : ThemeMode.light,
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       home: const Scaffold(

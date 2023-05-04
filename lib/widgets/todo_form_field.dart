@@ -1,6 +1,6 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
+import '../init/init.dart';
 
 final TextEditingController textEditingController = TextEditingController();
 
@@ -32,7 +32,7 @@ class TodoFromField extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            kDB.collection(COLLECTION_NAME).add({
+            kDB.collection(COLLECTION_REFERENCE.path).add({
               "text": textEditingController.text,
               "isDone": false,
             });

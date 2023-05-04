@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:providers/firestore.dart';
-import 'package:todo_app/main.dart';
-
+import 'package:todo_app/init/init.dart';
 import 'custom_todo_list_item.dart';
 
 class HomePageTodoList extends ConsumerWidget {
@@ -10,7 +9,7 @@ class HomePageTodoList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(colSP(COLLECTION_NAME)).when(
+    return ref.watch(colSP(COLLECTION_REFERENCE.path)).when(
       data: (col) {
         if (col.size == 0) return const SizedBox.shrink();
         return ListView.separated(
