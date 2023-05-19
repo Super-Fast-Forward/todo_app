@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:providers/firestore.dart';
-import 'package:todo_app/init/init.dart';
+import '../main.dart';
 import 'custom_todo_list_item.dart';
 
 class HomePageTodoList extends ConsumerWidget {
