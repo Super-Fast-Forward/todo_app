@@ -1,4 +1,6 @@
+// ignore_for_file: constant_identifier_names
+
 class Collections {
-  // ignore: constant_identifier_names
-  static const String TODO = "Todo_App";
+  static const String TODO_APP = "Todo_App";
+  static const String TODOS = "Todos";
 }
