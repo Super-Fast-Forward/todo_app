@@ -1,6 +1,6 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
+import '../../../main.dart';
 
 final TextEditingController textEditingController = TextEditingController();
 

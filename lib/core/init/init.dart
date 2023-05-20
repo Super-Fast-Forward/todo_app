@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:theme/config.dart';
-import '../firebase_options.dart';
-import '../main.dart';
+import '../../firebase_options.dart';
+import '../../main.dart';
 
 Future<void> init() async {
   ThemeModeConfig.enableSave = true;
