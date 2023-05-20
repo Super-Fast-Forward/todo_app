@@ -1,11 +1,4 @@
-import 'package:common/common.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:theme/config.dart';
-import 'package:todo_app/core/constants/_constants_export.dart';
-import '../../firebase_options.dart';
-import '../../main.dart';
+import 'package:todo_app/core/_core_export.dart';
 
 Future<void> init() async {
   ThemeModeConfig.enableSave = true;

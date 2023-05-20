@@ -1,10 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:todo_app/core/constants/app_texts.dart';
-import 'feature/todos/home_page.dart';
-import 'core/init/init.dart';
+import 'package:todo_app/core/_core_export.dart';
 
 // ignore: non_constant_identifier_names
 late final CollectionReference COLLECTION_REFERENCE;
